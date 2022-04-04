@@ -1,0 +1,14 @@
+name: 'Damm DevOps - Gitflow branch naming restriction'
+description: 'Gitflow branch naming restriction'
+
+outputs:
+  branch-naming-allowed:
+    description: 'Boolean output indicating if the push branch name is allowed.'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
+
+branding:
+  icon: 'alert-triangle'
+  color: 'gray-dark'
