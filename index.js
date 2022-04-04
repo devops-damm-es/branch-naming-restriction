@@ -14,8 +14,8 @@ async function run() {
             return;
         }
 
-        const defaultBranch = github.event.repository.default_branch;
-        core.info("Default branch: " + defaultBranch);
+        const defaultBranchName = core.getInput("default-branch-name");;
+        core.info("Default branch name: " + defaultBranchName);
         const branch = github.context.payload.ref.replace('refs/heads/', '');
         const regex = RegExp("(^" + defaultBranch + "$)|(^develop$)|(^feature\/.*)|(^release\/.*)|(^hotfix\/.*)");
         core.info("Regex: " + regex);
