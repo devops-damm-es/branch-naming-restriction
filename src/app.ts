@@ -4,4 +4,5 @@ import { IGitEventRepositoryService } from "./Infrastructure/IGitEventRepository
 let gitEventRepositoryService = IoCContainer.resolve(IGitEventRepositoryService);
 let a = gitEventRepositoryService.getGitEvent();
 
+console.log("Branch naming restriction");
 let adios = "adios";

@@ -4,5 +4,6 @@ const Container_1 = require("./Crosscutting/Container");
 const IGitEventRepositoryService_1 = require("./Infrastructure/IGitEventRepositoryService");
 let gitEventRepositoryService = Container_1.IoCContainer.resolve(IGitEventRepositoryService_1.IGitEventRepositoryService);
 let a = gitEventRepositoryService.getGitEvent();
+console.log("Branch naming restriction");
 let adios = "adios";
 //# sourceMappingURL=app.js.map
