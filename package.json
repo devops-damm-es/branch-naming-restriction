@@ -7,6 +7,8 @@
     "test": "test"
   },
   "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^4.0.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3",

@@ -14,8 +14,25 @@ it("getGitEventType_Ok", () => {
   expect(result).toBe(GitEventTypeEnum.PullRequest);
 });
 
+it("getGitEventType_ReturnsNull_Ok", () => {
+  // Arrange
+  let sut = new GitEventRepositoryService(mockGitEventWrapperNullRepositoryService);
+
+  // Act
+  var result = () => sut.getGitEventType();
+
+  // Assert
+  expect(result).toThrow(Error);
+});
+
 const mockGitEventWrapperRepositoryService: jest.Mocked<IGitEventWrapperRepositoryService> = {
   getGitEventType: jest.fn().mockImplementation(() => {
     return GitEventTypeEnum.PullRequest;
+  })
+};
+
+const mockGitEventWrapperNullRepositoryService: jest.Mocked<IGitEventWrapperRepositoryService> = {
+  getGitEventType: jest.fn().mockImplementation(() => {
+    return null;
   })
 };

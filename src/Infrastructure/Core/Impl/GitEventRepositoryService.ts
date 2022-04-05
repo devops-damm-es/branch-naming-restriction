@@ -12,6 +12,11 @@ export class GitEventRepositoryService implements IGitEventRepositoryService {
     }
 
     getGitEventType(): GitEventTypeEnum {
-        return this.gitEventWrapperRepositoryService.getGitEventType();
+        var gitEventType = this.gitEventWrapperRepositoryService.getGitEventType();
+        if (gitEventType != null) {
+            return gitEventType;
+        } else {
+            throw new Error("Invalid git event type");
+        }
     }
 }
