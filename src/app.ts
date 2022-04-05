@@ -1,8 +1,12 @@
+import { IGitEventApplicationService } from "./Application/Core/IGitEventApplicationService";
 import { IoCContainer } from "./Crosscutting/Container";
-import { IGitEventRepositoryService } from "./Infrastructure/Core/IGitEventRepositoryService";
+import { GitEventTypeEnum } from "./Domain/Enums/GitEventTypeEnum";
 
-let gitEventRepositoryService = IoCContainer.resolve(IGitEventRepositoryService);
-let a = gitEventRepositoryService.getGitEvent();
+let gitEventApplicationService = IoCContainer.resolve(IGitEventApplicationService);
+var gitEventType = gitEventApplicationService.getGitEventType();
 
-console.log("Branch naming restriction");
-let adios = "adios";
+if (gitEventType == GitEventTypeEnum.Push) {
+    console.log("Branch naming restriction: Push event");
+} else if (gitEventType == GitEventTypeEnum.PullRequest) {
+    console.log("Branch naming restriction: Pull request event");
+}
