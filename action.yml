@@ -16,9 +16,9 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version: '12'
-    - run: npm install
+    - run: ${{ github.action_path }}/npm install
       shell: bash
-    - run: node dist/app.js
+    - run: ${{ github.action_path }}/node dist/app.js
       shell: bash
 
 branding:
