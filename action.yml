@@ -17,7 +17,9 @@ runs:
       with:
         node-version: '12'
     - run: npm install
+      shell: bash
     - run: node dist/app.js
+      shell: bash
 
 branding:
   icon: 'alert-triangle'
