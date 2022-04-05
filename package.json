@@ -2,25 +2,27 @@
   "name": "branch-naming-restriction",
   "version": "1.0.0",
   "description": "Damm DevOps - Gitflow branch naming restriction",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "jest.config.js",
+  "directories": {
+    "test": "test"
   },
-  "keywords": [
-    "github",
-    "actions"
-  ],
-  "author": "Damm DevOps",
-  "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.1"
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3",
+    "typescript-ioc": "^3.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devops-damm-es/branch-naming-restriction.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/devops-damm-es/branch-naming-restriction/issues"
   },

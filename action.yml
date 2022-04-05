@@ -12,7 +12,7 @@ outputs:
 
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/app.js'
 
 branding:
   icon: 'alert-triangle'
