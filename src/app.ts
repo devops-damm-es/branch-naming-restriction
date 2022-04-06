@@ -14,4 +14,4 @@ if (gitEventType == GitEventTypeEnum.Push) {
 
 let gitDefaultBranchNameApplicationService = IoCContainer.resolve(IGitDefaultBranchNameApplicationService);
 var gitDefaultBranchName = gitDefaultBranchNameApplicationService.getGitDefaultBranchName();
-console.log(gitDefaultBranchName);
+console.log("Default branch name: " + gitDefaultBranchName);

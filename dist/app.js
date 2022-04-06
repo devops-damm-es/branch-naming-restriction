@@ -14,5 +14,5 @@ else if (gitEventType == GitEventTypeEnum_1.GitEventTypeEnum.PullRequest) {
 }
 let gitDefaultBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitDefaultBranchNameApplicationService_1.IGitDefaultBranchNameApplicationService);
 var gitDefaultBranchName = gitDefaultBranchNameApplicationService.getGitDefaultBranchName();
-console.log(gitDefaultBranchName);
+console.log("Default branch name: " + gitDefaultBranchName);
 //# sourceMappingURL=app.js.map
