@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const IGitDefaultBranchNameApplicationService_1 = require("./Application/Core/IGitDefaultBranchNameApplicationService");
 const IGitEventApplicationService_1 = require("./Application/Core/IGitEventApplicationService");
 const Container_1 = require("./Crosscutting/Container");
 const GitEventTypeEnum_1 = require("./Domain/Enums/GitEventTypeEnum");
@@ -11,4 +12,7 @@ if (gitEventType == GitEventTypeEnum_1.GitEventTypeEnum.Push) {
 else if (gitEventType == GitEventTypeEnum_1.GitEventTypeEnum.PullRequest) {
     console.log("Branch naming restriction: Pull request event");
 }
+let gitDefaultBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitDefaultBranchNameApplicationService_1.IGitDefaultBranchNameApplicationService);
+var gitDefaultBranchName = gitDefaultBranchNameApplicationService.getGitDefaultBranchName();
+console.log(gitDefaultBranchName);
 //# sourceMappingURL=app.js.map
