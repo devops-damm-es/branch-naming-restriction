@@ -6,6 +6,7 @@ class GitDefaultBranchNameWrapperRepositoryService {
     getGitDefaultBranchName() {
         try {
             const defaultBranchName = core.getInput("default-branch-name");
+            console.log("default-branch-name: " + defaultBranchName);
             if (defaultBranchName != null && defaultBranchName.length > 0) {
                 return defaultBranchName;
             }

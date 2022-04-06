@@ -12,7 +12,7 @@ export class GitDefaultBranchNameRepositoryService implements IGitDefaultBranchN
 
     getGitDefaultBranchName(): String {
         var gitDefaultBranchName = this.gitDefaultBranchNameWrapperRepositoryService.getGitDefaultBranchName();
-        if(gitDefaultBranchName != null){
+        if (gitDefaultBranchName != null) {
             return gitDefaultBranchName;
         } else {
             throw new Error("Invalid git default branch name");
