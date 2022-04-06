@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const IGitDefaultBranchNameApplicationService_1 = require("./Application/Core/IGitDefaultBranchNameApplicationService");
 const IGitEventApplicationService_1 = require("./Application/Core/IGitEventApplicationService");
+const IGitPushBranchNameApplicationService_1 = require("./Application/Core/IGitPushBranchNameApplicationService");
 const Container_1 = require("./Crosscutting/Container");
 const GitEventTypeEnum_1 = require("./Domain/Enums/GitEventTypeEnum");
 let gitEventApplicationService = Container_1.IoCContainer.resolve(IGitEventApplicationService_1.IGitEventApplicationService);
@@ -15,4 +16,7 @@ else if (gitEventType == GitEventTypeEnum_1.GitEventTypeEnum.PullRequest) {
 let gitDefaultBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitDefaultBranchNameApplicationService_1.IGitDefaultBranchNameApplicationService);
 var gitDefaultBranchName = gitDefaultBranchNameApplicationService.getGitDefaultBranchName();
 console.log("Default branch name: " + gitDefaultBranchName);
+let gitPushBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitPushBranchNameApplicationService_1.IGitPushBranchNameApplicationService);
+var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName();
+console.log("Push branch name: " + gitPushBranchName);
 //# sourceMappingURL=app.js.map
