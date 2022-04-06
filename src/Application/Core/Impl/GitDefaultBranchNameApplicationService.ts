@@ -13,5 +13,4 @@ export class GitDefaultBranchNameApplicationService implements IGitDefaultBranch
     getGitDefaultBranchName(): String {
         return this.gitDefaultBranchNameDomainService.getRepositoryService().getGitDefaultBranchName();
     }
-
 }

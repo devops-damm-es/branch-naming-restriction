@@ -1,3 +1,4 @@
+import { IActionResultApplicationService } from "./Application/Core/IActionResultApplicationService";
 import { IGitDefaultBranchNameApplicationService } from "./Application/Core/IGitDefaultBranchNameApplicationService";
 import { IGitEventApplicationService } from "./Application/Core/IGitEventApplicationService";
 import { IGitPushBranchNameApplicationService } from "./Application/Core/IGitPushBranchNameApplicationService";
@@ -20,3 +21,6 @@ console.log("Default branch name: " + gitDefaultBranchName);
 let gitPushBranchNameApplicationService = IoCContainer.resolve(IGitPushBranchNameApplicationService);
 var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName();
 console.log("Push branch name: " + gitPushBranchName);
+
+let actionResultApplicationService = IoCContainer.resolve(IActionResultApplicationService);
+actionResultApplicationService.setActionResult(true);

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const IActionResultApplicationService_1 = require("./Application/Core/IActionResultApplicationService");
 const IGitDefaultBranchNameApplicationService_1 = require("./Application/Core/IGitDefaultBranchNameApplicationService");
 const IGitEventApplicationService_1 = require("./Application/Core/IGitEventApplicationService");
 const IGitPushBranchNameApplicationService_1 = require("./Application/Core/IGitPushBranchNameApplicationService");
@@ -19,4 +20,6 @@ console.log("Default branch name: " + gitDefaultBranchName);
 let gitPushBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitPushBranchNameApplicationService_1.IGitPushBranchNameApplicationService);
 var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName();
 console.log("Push branch name: " + gitPushBranchName);
+let actionResultApplicationService = Container_1.IoCContainer.resolve(IActionResultApplicationService_1.IActionResultApplicationService);
+actionResultApplicationService.setActionResult(true);
 //# sourceMappingURL=app.js.map

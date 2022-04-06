@@ -14,5 +14,4 @@ export class GitEventApplicationService implements IGitEventApplicationService {
     getGitEventType(): GitEventTypeEnum {
         return this.gitEventDomainService.getRepositoryService().getGitEventType();
     }
-
 }

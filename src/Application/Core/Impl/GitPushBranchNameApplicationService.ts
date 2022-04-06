@@ -13,5 +13,4 @@ export class GitPushBranchNameApplicationService implements IGitPushBranchNameAp
     getGitPushBranchName(): String {
         return this.gitPushBranchNameDomainService.getRepositoryService().getGitPushBranchName();
     }
-
 }
