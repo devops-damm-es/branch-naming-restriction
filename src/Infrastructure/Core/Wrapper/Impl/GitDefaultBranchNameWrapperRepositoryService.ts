@@ -5,7 +5,7 @@ export class GitDefaultBranchNameWrapperRepositoryService implements IGitDefault
     getGitDefaultBranchName(): String | null {
         try {
             const defaultBranchName = core.getInput("default-branch-name");
-            if (defaultBranchName != null && defaultBranchName.length < 0) {
+            if (defaultBranchName != null && defaultBranchName.length > 0) {
                 return defaultBranchName;
             } else {
                 return null;
