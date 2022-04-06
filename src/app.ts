@@ -1,3 +1,4 @@
+import { IGitDefaultBranchNameApplicationService } from "./Application/Core/IGitDefaultBranchNameApplicationService";
 import { IGitEventApplicationService } from "./Application/Core/IGitEventApplicationService";
 import { IoCContainer } from "./Crosscutting/Container";
 import { GitEventTypeEnum } from "./Domain/Enums/GitEventTypeEnum";
@@ -10,3 +11,7 @@ if (gitEventType == GitEventTypeEnum.Push) {
 } else if (gitEventType == GitEventTypeEnum.PullRequest) {
     console.log("Branch naming restriction: Pull request event");
 }
+
+let gitDefaultBranchNameApplicationService = IoCContainer.resolve(IGitDefaultBranchNameApplicationService);
+var gitDefaultBranchName = gitDefaultBranchNameApplicationService.getGitDefaultBranchName();
+console.log(gitDefaultBranchName);
