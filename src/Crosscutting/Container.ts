@@ -1,5 +1,7 @@
 import { Container } from "typescript-ioc";
+import { IGitDefaultBranchNameApplicationService } from "../Application/Core/IGitDefaultBranchNameApplicationService";
 import { IGitEventApplicationService } from "../Application/Core/IGitEventApplicationService";
+import { GitDefaultBranchNameApplicationService } from "../Application/Core/Impl/GitDefaultBranchNameApplicationService";
 import { GitEventApplicationService } from "../Application/Core/Impl/GitEventApplicationService";
 import { IGitDefaultBranchNameDomainService } from "../Domain/Services/Core/IGitDefaultBranchNameDomainService";
 import { IGitEventDomainService } from "../Domain/Services/Core/IGitEventDomainService";
@@ -20,6 +22,7 @@ export class IoCContainer {
     private static loadContainer() {
 
         // Application
+        Container.bind(IGitDefaultBranchNameApplicationService).to(GitDefaultBranchNameApplicationService);
         Container.bind(IGitEventApplicationService).to(GitEventApplicationService);
 
         // Domain
