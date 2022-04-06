@@ -4,6 +4,7 @@ description: 'Gitflow branch naming restriction'
 outputs:
   branch_naming_allowed:
     description: 'Boolean output indicating if the push branch name is allowed.'
+    value: ${{ steps.run-script.outputs.branch_naming_allowed }}
 
 runs:
   using: 'composite'
@@ -13,6 +14,7 @@ runs:
         node-version: '12'
     - run: export DEFAULT_BRANCH_NAME=${{ github.event.repository.default_branch }} && cd ${{ github.action_path }} && npm install && node dist/app.js
       shell: bash
+      id: run-script
 
 branding:
   icon: 'alert-triangle'
