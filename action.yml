@@ -1,11 +1,6 @@
 name: 'Damm DevOps - Gitflow branch naming restriction'
 description: 'Gitflow branch naming restriction'
 
-inputs:
-  default-branch-name:
-    description: 'Default branch name (usually main or master)'
-    default: ${{ github.event.repository.default_branch }}
-
 outputs:
   branch-naming-allowed:
     description: 'Boolean output indicating if the push branch name is allowed.'
@@ -16,6 +11,10 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version: '12'
+    - run: export DEFAULT_BRANCH_NAME=${{ github.event.repository.default_branch }}
+      shell: bash
+    - run: echo $DEFAULT_BRANCH_NAME
+      shell: bash
     - run: cd ${{ github.action_path }} && npm install
       shell: bash
     - run: cd ${{ github.action_path }} && node dist/app.js

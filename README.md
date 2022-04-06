@@ -25,13 +25,6 @@ jobs:
       - name: Verify Gitflow branch naming restriction
         uses: devops-damm-es/branch-naming-restriction@v1.0.0
 ```
-
-# Input Variables
-
-## default-branch-name
-
-Default branch name (usually main or master)
-
 # Output Variables
 
 ## branch-naming-allowed
