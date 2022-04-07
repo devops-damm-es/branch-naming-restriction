@@ -3,6 +3,7 @@ import { IGitAuthenticationApplicationService } from "./Application/Core/IGitAut
 import { IGitDefaultBranchNameApplicationService } from "./Application/Core/IGitDefaultBranchNameApplicationService";
 import { IGitEventApplicationService } from "./Application/Core/IGitEventApplicationService";
 import { IGitPushBranchNameApplicationService } from "./Application/Core/IGitPushBranchNameApplicationService";
+import { IGitRepositoryApplicationService } from "./Application/Core/IGitRepositoryApplicationService";
 import { IoCContainer } from "./Crosscutting/Container";
 import { GitEventTypeEnum } from "./Domain/Enums/GitEventTypeEnum";
 
@@ -29,3 +30,8 @@ actionResultApplicationService.setActionResult(true);
 let gitAuthenticationApplicationService = IoCContainer.resolve(IGitAuthenticationApplicationService);
 var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
 console.log("Git Authentication: " + gitAuthentication.token);
+
+let gitRepositoryApplicationService = IoCContainer.resolve(IGitRepositoryApplicationService);
+var gitRepository = gitRepositoryApplicationService.getGitRepository();
+console.log("Git Repository owner: " + gitRepository.owner);
+console.log("Git Repository name: " + gitRepository.name);

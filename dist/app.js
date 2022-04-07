@@ -5,6 +5,7 @@ const IGitAuthenticationApplicationService_1 = require("./Application/Core/IGitA
 const IGitDefaultBranchNameApplicationService_1 = require("./Application/Core/IGitDefaultBranchNameApplicationService");
 const IGitEventApplicationService_1 = require("./Application/Core/IGitEventApplicationService");
 const IGitPushBranchNameApplicationService_1 = require("./Application/Core/IGitPushBranchNameApplicationService");
+const IGitRepositoryApplicationService_1 = require("./Application/Core/IGitRepositoryApplicationService");
 const Container_1 = require("./Crosscutting/Container");
 const GitEventTypeEnum_1 = require("./Domain/Enums/GitEventTypeEnum");
 let gitEventApplicationService = Container_1.IoCContainer.resolve(IGitEventApplicationService_1.IGitEventApplicationService);
@@ -26,4 +27,8 @@ actionResultApplicationService.setActionResult(true);
 let gitAuthenticationApplicationService = Container_1.IoCContainer.resolve(IGitAuthenticationApplicationService_1.IGitAuthenticationApplicationService);
 var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
 console.log("Git Authentication: " + gitAuthentication.token);
+let gitRepositoryApplicationService = Container_1.IoCContainer.resolve(IGitRepositoryApplicationService_1.IGitRepositoryApplicationService);
+var gitRepository = gitRepositoryApplicationService.getGitRepository();
+console.log("Git Repository owner: " + gitRepository.owner);
+console.log("Git Repository name: " + gitRepository.name);
 //# sourceMappingURL=app.js.map
