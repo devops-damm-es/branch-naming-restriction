@@ -4,7 +4,11 @@ import { IActionResultWrapperRepositoryService } from "../IActionResultWrapperRe
 export class ActionResultWrapperRepositoryService implements IActionResultWrapperRepositoryService {
     setActionResult(success: Boolean) {
         try {
-            core.setOutput("branch_naming_allowed", success);
+            var text = "branch_naming_allowed";
+            core.setOutput(text, success);
+            if (success == false) {
+                core.setFailed(text + ": " + success.toString());
+            }
         } catch { }
     }
 }

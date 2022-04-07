@@ -24,9 +24,6 @@ let gitPushBranchNameApplicationService = IoCContainer.resolve(IGitPushBranchNam
 var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName();
 console.log("Push branch name: " + gitPushBranchName);
 
-let actionResultApplicationService = IoCContainer.resolve(IActionResultApplicationService);
-actionResultApplicationService.setActionResult(true);
-
 let gitAuthenticationApplicationService = IoCContainer.resolve(IGitAuthenticationApplicationService);
 var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
 console.log("Git Authentication: " + gitAuthentication.token);
@@ -35,3 +32,6 @@ let gitRepositoryApplicationService = IoCContainer.resolve(IGitRepositoryApplica
 var gitRepository = gitRepositoryApplicationService.getGitRepository();
 console.log("Git Repository owner: " + gitRepository.owner);
 console.log("Git Repository name: " + gitRepository.name);
+
+let actionResultApplicationService = IoCContainer.resolve(IActionResultApplicationService);
+actionResultApplicationService.setActionResult(false);

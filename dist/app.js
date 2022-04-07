@@ -22,8 +22,6 @@ console.log("Default branch name: " + gitDefaultBranchName);
 let gitPushBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitPushBranchNameApplicationService_1.IGitPushBranchNameApplicationService);
 var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName();
 console.log("Push branch name: " + gitPushBranchName);
-let actionResultApplicationService = Container_1.IoCContainer.resolve(IActionResultApplicationService_1.IActionResultApplicationService);
-actionResultApplicationService.setActionResult(true);
 let gitAuthenticationApplicationService = Container_1.IoCContainer.resolve(IGitAuthenticationApplicationService_1.IGitAuthenticationApplicationService);
 var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
 console.log("Git Authentication: " + gitAuthentication.token);
@@ -31,4 +29,6 @@ let gitRepositoryApplicationService = Container_1.IoCContainer.resolve(IGitRepos
 var gitRepository = gitRepositoryApplicationService.getGitRepository();
 console.log("Git Repository owner: " + gitRepository.owner);
 console.log("Git Repository name: " + gitRepository.name);
+let actionResultApplicationService = Container_1.IoCContainer.resolve(IActionResultApplicationService_1.IActionResultApplicationService);
+actionResultApplicationService.setActionResult(false);
 //# sourceMappingURL=app.js.map
