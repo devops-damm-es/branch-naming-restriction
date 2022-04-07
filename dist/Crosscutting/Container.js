@@ -7,11 +7,13 @@ const IGitAuthenticationApplicationService_1 = require("../Application/Core/IGit
 const IGitDefaultBranchNameApplicationService_1 = require("../Application/Core/IGitDefaultBranchNameApplicationService");
 const IGitEventApplicationService_1 = require("../Application/Core/IGitEventApplicationService");
 const IGitPushBranchNameApplicationService_1 = require("../Application/Core/IGitPushBranchNameApplicationService");
+const IGitRepositoryApplicationService_1 = require("../Application/Core/IGitRepositoryApplicationService");
 const ActionResultApplicationService_1 = require("../Application/Core/Impl/ActionResultApplicationService");
 const GitAuthenticationApplicationService_1 = require("../Application/Core/Impl/GitAuthenticationApplicationService");
 const GitDefaultBranchNameApplicationService_1 = require("../Application/Core/Impl/GitDefaultBranchNameApplicationService");
 const GitEventApplicationService_1 = require("../Application/Core/Impl/GitEventApplicationService");
 const GitPushBranchNameApplicationService_1 = require("../Application/Core/Impl/GitPushBranchNameApplicationService");
+const GitRepositoryApplicationService_1 = require("../Application/Core/Impl/GitRepositoryApplicationService");
 const IActionResultDomainService_1 = require("../Domain/Services/Core/IActionResultDomainService");
 const IGitAuthenticationDomainService_1 = require("../Domain/Services/Core/IGitAuthenticationDomainService");
 const IGitDefaultBranchNameDomainService_1 = require("../Domain/Services/Core/IGitDefaultBranchNameDomainService");
@@ -56,6 +58,7 @@ class IoCContainer {
         typescript_ioc_1.Container.bind(IGitDefaultBranchNameApplicationService_1.IGitDefaultBranchNameApplicationService).to(GitDefaultBranchNameApplicationService_1.GitDefaultBranchNameApplicationService);
         typescript_ioc_1.Container.bind(IGitEventApplicationService_1.IGitEventApplicationService).to(GitEventApplicationService_1.GitEventApplicationService);
         typescript_ioc_1.Container.bind(IGitPushBranchNameApplicationService_1.IGitPushBranchNameApplicationService).to(GitPushBranchNameApplicationService_1.GitPushBranchNameApplicationService);
+        typescript_ioc_1.Container.bind(IGitRepositoryApplicationService_1.IGitRepositoryApplicationService).to(GitRepositoryApplicationService_1.GitRepositoryApplicationService);
         // Domain
         typescript_ioc_1.Container.bind(IActionResultDomainService_1.IActionResultDomainService).to(ActionResultDomainService_1.ActionResultDomainService);
         typescript_ioc_1.Container.bind(IGitAuthenticationDomainService_1.IGitAuthenticationDomainService).to(GitAuthenticationDomainService_1.GitAuthenticationDomainService);

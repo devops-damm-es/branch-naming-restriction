@@ -4,11 +4,13 @@ import { IGitAuthenticationApplicationService } from "../Application/Core/IGitAu
 import { IGitDefaultBranchNameApplicationService } from "../Application/Core/IGitDefaultBranchNameApplicationService";
 import { IGitEventApplicationService } from "../Application/Core/IGitEventApplicationService";
 import { IGitPushBranchNameApplicationService } from "../Application/Core/IGitPushBranchNameApplicationService";
+import { IGitRepositoryApplicationService } from "../Application/Core/IGitRepositoryApplicationService";
 import { ActionResultApplicationService } from "../Application/Core/Impl/ActionResultApplicationService";
 import { GitAuthenticationApplicationService } from "../Application/Core/Impl/GitAuthenticationApplicationService";
 import { GitDefaultBranchNameApplicationService } from "../Application/Core/Impl/GitDefaultBranchNameApplicationService";
 import { GitEventApplicationService } from "../Application/Core/Impl/GitEventApplicationService";
 import { GitPushBranchNameApplicationService } from "../Application/Core/Impl/GitPushBranchNameApplicationService";
+import { GitRepositoryApplicationService } from "../Application/Core/Impl/GitRepositoryApplicationService";
 import { IActionResultDomainService } from "../Domain/Services/Core/IActionResultDomainService";
 import { IGitAuthenticationDomainService } from "../Domain/Services/Core/IGitAuthenticationDomainService";
 import { IGitDefaultBranchNameDomainService } from "../Domain/Services/Core/IGitDefaultBranchNameDomainService";
@@ -57,6 +59,7 @@ export class IoCContainer {
         Container.bind(IGitDefaultBranchNameApplicationService).to(GitDefaultBranchNameApplicationService);
         Container.bind(IGitEventApplicationService).to(GitEventApplicationService);
         Container.bind(IGitPushBranchNameApplicationService).to(GitPushBranchNameApplicationService);
+        Container.bind(IGitRepositoryApplicationService).to(GitRepositoryApplicationService);
 
         // Domain
         Container.bind(IActionResultDomainService).to(ActionResultDomainService);
