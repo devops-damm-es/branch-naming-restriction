@@ -14,12 +14,14 @@ import { GitRepositoryApplicationService } from "../Application/Core/Impl/GitRep
 import { IActionResultDomainService } from "../Domain/Services/Core/IActionResultDomainService";
 import { IGitAuthenticationDomainService } from "../Domain/Services/Core/IGitAuthenticationDomainService";
 import { IGitDefaultBranchNameDomainService } from "../Domain/Services/Core/IGitDefaultBranchNameDomainService";
+import { IGitEventBusinessRuleDomainService } from "../Domain/Services/Core/IGitEventBusinessRuleDomainService";
 import { IGitEventDomainService } from "../Domain/Services/Core/IGitEventDomainService";
 import { IGitPushBranchNameDomainService } from "../Domain/Services/Core/IGitPushBranchNameDomainService";
 import { IGitRepositoryDomainService } from "../Domain/Services/Core/IGitRepositoryDomainService";
 import { ActionResultDomainService } from "../Domain/Services/Core/Impl/ActionResultDomainService";
 import { GitAuthenticationDomainService } from "../Domain/Services/Core/Impl/GitAuthenticationDomainService";
 import { GitDefaultBranchNameDomainService } from "../Domain/Services/Core/Impl/GitDefaultBranchNameDomainService";
+import { GitEventBusinessRuleDomainService } from "../Domain/Services/Core/Impl/GitEventBusinessRuleDomainService";
 import { GitEventDomainService } from "../Domain/Services/Core/Impl/GitEventDomainService";
 import { GitPushBranchNameDomainService } from "../Domain/Services/Core/Impl/GitPushBranchNameDomainService";
 import { GitRepositoryDomainService } from "../Domain/Services/Core/Impl/GitRepositoryDomainService";
@@ -65,6 +67,7 @@ export class IoCContainer {
         Container.bind(IActionResultDomainService).to(ActionResultDomainService);
         Container.bind(IGitAuthenticationDomainService).to(GitAuthenticationDomainService);
         Container.bind(IGitDefaultBranchNameDomainService).to(GitDefaultBranchNameDomainService);
+        Container.bind(IGitEventBusinessRuleDomainService).to(GitEventBusinessRuleDomainService);
         Container.bind(IGitEventDomainService).to(GitEventDomainService);
         Container.bind(IGitPushBranchNameDomainService).to(GitPushBranchNameDomainService);
         Container.bind(IGitRepositoryDomainService).to(GitRepositoryDomainService);

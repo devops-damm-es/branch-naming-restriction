@@ -8,6 +8,7 @@ const IGitPushBranchNameApplicationService_1 = require("./Application/Core/IGitP
 const IGitRepositoryApplicationService_1 = require("./Application/Core/IGitRepositoryApplicationService");
 const Container_1 = require("./Crosscutting/Container");
 const GitEventTypeEnum_1 = require("./Domain/Enums/GitEventTypeEnum");
+const IGitEventBusinessRuleDomainService_1 = require("./Domain/Services/Core/IGitEventBusinessRuleDomainService");
 let gitEventApplicationService = Container_1.IoCContainer.resolve(IGitEventApplicationService_1.IGitEventApplicationService);
 var gitEventType = gitEventApplicationService.getGitEventType();
 if (gitEventType == GitEventTypeEnum_1.GitEventTypeEnum.Push) {
@@ -16,6 +17,9 @@ if (gitEventType == GitEventTypeEnum_1.GitEventTypeEnum.Push) {
 else if (gitEventType == GitEventTypeEnum_1.GitEventTypeEnum.PullRequest) {
     console.log("Branch naming restriction: Pull request event");
 }
+let gitEventBusinessRuleDomainService = Container_1.IoCContainer.resolve(IGitEventBusinessRuleDomainService_1.IGitEventBusinessRuleDomainService);
+var isAllowedGitEventType = gitEventBusinessRuleDomainService.isAllowedGitEventType(gitEventType);
+console.log("Is allowed event type: " + isAllowedGitEventType.toString());
 let gitDefaultBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitDefaultBranchNameApplicationService_1.IGitDefaultBranchNameApplicationService);
 var gitDefaultBranchName = gitDefaultBranchNameApplicationService.getGitDefaultBranchName();
 console.log("Default branch name: " + gitDefaultBranchName);

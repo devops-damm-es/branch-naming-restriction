@@ -6,6 +6,7 @@ import { IGitPushBranchNameApplicationService } from "./Application/Core/IGitPus
 import { IGitRepositoryApplicationService } from "./Application/Core/IGitRepositoryApplicationService";
 import { IoCContainer } from "./Crosscutting/Container";
 import { GitEventTypeEnum } from "./Domain/Enums/GitEventTypeEnum";
+import { IGitEventBusinessRuleDomainService } from "./Domain/Services/Core/IGitEventBusinessRuleDomainService";
 
 let gitEventApplicationService = IoCContainer.resolve(IGitEventApplicationService);
 var gitEventType = gitEventApplicationService.getGitEventType();
@@ -15,6 +16,10 @@ if (gitEventType == GitEventTypeEnum.Push) {
 } else if (gitEventType == GitEventTypeEnum.PullRequest) {
     console.log("Branch naming restriction: Pull request event");
 }
+
+let gitEventBusinessRuleDomainService = IoCContainer.resolve(IGitEventBusinessRuleDomainService);
+var isAllowedGitEventType = gitEventBusinessRuleDomainService.isAllowedGitEventType(gitEventType);
+console.log("Is allowed event type: " + isAllowedGitEventType.toString());
 
 let gitDefaultBranchNameApplicationService = IoCContainer.resolve(IGitDefaultBranchNameApplicationService);
 var gitDefaultBranchName = gitDefaultBranchNameApplicationService.getGitDefaultBranchName();
@@ -35,3 +40,4 @@ console.log("Git Repository name: " + gitRepository.name);
 
 let actionResultApplicationService = IoCContainer.resolve(IActionResultApplicationService);
 actionResultApplicationService.setActionResult(true);
+

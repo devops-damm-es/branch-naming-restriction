@@ -17,12 +17,14 @@ const GitRepositoryApplicationService_1 = require("../Application/Core/Impl/GitR
 const IActionResultDomainService_1 = require("../Domain/Services/Core/IActionResultDomainService");
 const IGitAuthenticationDomainService_1 = require("../Domain/Services/Core/IGitAuthenticationDomainService");
 const IGitDefaultBranchNameDomainService_1 = require("../Domain/Services/Core/IGitDefaultBranchNameDomainService");
+const IGitEventBusinessRuleDomainService_1 = require("../Domain/Services/Core/IGitEventBusinessRuleDomainService");
 const IGitEventDomainService_1 = require("../Domain/Services/Core/IGitEventDomainService");
 const IGitPushBranchNameDomainService_1 = require("../Domain/Services/Core/IGitPushBranchNameDomainService");
 const IGitRepositoryDomainService_1 = require("../Domain/Services/Core/IGitRepositoryDomainService");
 const ActionResultDomainService_1 = require("../Domain/Services/Core/Impl/ActionResultDomainService");
 const GitAuthenticationDomainService_1 = require("../Domain/Services/Core/Impl/GitAuthenticationDomainService");
 const GitDefaultBranchNameDomainService_1 = require("../Domain/Services/Core/Impl/GitDefaultBranchNameDomainService");
+const GitEventBusinessRuleDomainService_1 = require("../Domain/Services/Core/Impl/GitEventBusinessRuleDomainService");
 const GitEventDomainService_1 = require("../Domain/Services/Core/Impl/GitEventDomainService");
 const GitPushBranchNameDomainService_1 = require("../Domain/Services/Core/Impl/GitPushBranchNameDomainService");
 const GitRepositoryDomainService_1 = require("../Domain/Services/Core/Impl/GitRepositoryDomainService");
@@ -63,6 +65,7 @@ class IoCContainer {
         typescript_ioc_1.Container.bind(IActionResultDomainService_1.IActionResultDomainService).to(ActionResultDomainService_1.ActionResultDomainService);
         typescript_ioc_1.Container.bind(IGitAuthenticationDomainService_1.IGitAuthenticationDomainService).to(GitAuthenticationDomainService_1.GitAuthenticationDomainService);
         typescript_ioc_1.Container.bind(IGitDefaultBranchNameDomainService_1.IGitDefaultBranchNameDomainService).to(GitDefaultBranchNameDomainService_1.GitDefaultBranchNameDomainService);
+        typescript_ioc_1.Container.bind(IGitEventBusinessRuleDomainService_1.IGitEventBusinessRuleDomainService).to(GitEventBusinessRuleDomainService_1.GitEventBusinessRuleDomainService);
         typescript_ioc_1.Container.bind(IGitEventDomainService_1.IGitEventDomainService).to(GitEventDomainService_1.GitEventDomainService);
         typescript_ioc_1.Container.bind(IGitPushBranchNameDomainService_1.IGitPushBranchNameDomainService).to(GitPushBranchNameDomainService_1.GitPushBranchNameDomainService);
         typescript_ioc_1.Container.bind(IGitRepositoryDomainService_1.IGitRepositoryDomainService).to(GitRepositoryDomainService_1.GitRepositoryDomainService);
