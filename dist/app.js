@@ -30,5 +30,5 @@ var gitRepository = gitRepositoryApplicationService.getGitRepository();
 console.log("Git Repository owner: " + gitRepository.owner);
 console.log("Git Repository name: " + gitRepository.name);
 let actionResultApplicationService = Container_1.IoCContainer.resolve(IActionResultApplicationService_1.IActionResultApplicationService);
-actionResultApplicationService.setActionResult(false);
+actionResultApplicationService.setActionResult(true);
 //# sourceMappingURL=app.js.map

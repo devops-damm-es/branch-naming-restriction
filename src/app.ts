@@ -34,4 +34,4 @@ console.log("Git Repository owner: " + gitRepository.owner);
 console.log("Git Repository name: " + gitRepository.name);
 
 let actionResultApplicationService = IoCContainer.resolve(IActionResultApplicationService);
-actionResultApplicationService.setActionResult(false);
+actionResultApplicationService.setActionResult(true);
