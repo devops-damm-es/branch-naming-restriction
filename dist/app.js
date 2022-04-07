@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const IActionResultApplicationService_1 = require("./Application/Core/IActionResultApplicationService");
+const IGitAuthenticationApplicationService_1 = require("./Application/Core/IGitAuthenticationApplicationService");
 const IGitDefaultBranchNameApplicationService_1 = require("./Application/Core/IGitDefaultBranchNameApplicationService");
 const IGitEventApplicationService_1 = require("./Application/Core/IGitEventApplicationService");
 const IGitPushBranchNameApplicationService_1 = require("./Application/Core/IGitPushBranchNameApplicationService");
@@ -22,4 +23,7 @@ var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName
 console.log("Push branch name: " + gitPushBranchName);
 let actionResultApplicationService = Container_1.IoCContainer.resolve(IActionResultApplicationService_1.IActionResultApplicationService);
 actionResultApplicationService.setActionResult(true);
+let gitAuthenticationApplicationService = Container_1.IoCContainer.resolve(IGitAuthenticationApplicationService_1.IGitAuthenticationApplicationService);
+var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
+console.log("Git Authentication: " + gitAuthentication.token);
 //# sourceMappingURL=app.js.map

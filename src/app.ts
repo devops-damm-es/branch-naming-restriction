@@ -1,4 +1,5 @@
 import { IActionResultApplicationService } from "./Application/Core/IActionResultApplicationService";
+import { IGitAuthenticationApplicationService } from "./Application/Core/IGitAuthenticationApplicationService";
 import { IGitDefaultBranchNameApplicationService } from "./Application/Core/IGitDefaultBranchNameApplicationService";
 import { IGitEventApplicationService } from "./Application/Core/IGitEventApplicationService";
 import { IGitPushBranchNameApplicationService } from "./Application/Core/IGitPushBranchNameApplicationService";
@@ -24,3 +25,7 @@ console.log("Push branch name: " + gitPushBranchName);
 
 let actionResultApplicationService = IoCContainer.resolve(IActionResultApplicationService);
 actionResultApplicationService.setActionResult(true);
+
+let gitAuthenticationApplicationService = IoCContainer.resolve(IGitAuthenticationApplicationService);
+var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
+console.log("Git Authentication: " + gitAuthentication.token);
