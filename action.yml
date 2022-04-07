@@ -12,7 +12,7 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version: '12'
-    - run: export DEFAULT_BRANCH_NAME=${{ github.event.repository.default_branch }} && export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} && cd ${{ github.action_path }} && npm install && node dist/app.js
+    - run: export DEFAULT_BRANCH_NAME=${{ github.event.repository.default_branch }} && export GITHUB_TOKEN=${{ github.token }} && cd ${{ github.action_path }} && npm install && node dist/app.js
       shell: bash
       id: run-script
 
