@@ -6,6 +6,7 @@ import { IGitPushBranchNameApplicationService } from "./Application/Core/IGitPus
 import { IGitRepositoryApplicationService } from "./Application/Core/IGitRepositoryApplicationService";
 import { IoCContainer } from "./Crosscutting/Container";
 import { GitEventTypeEnum } from "./Domain/Enums/GitEventTypeEnum";
+import { IGitBranchBusinessRuleDomainService } from "./Domain/Services/Core/IGitBranchBusinessRuleDomainService";
 import { IGitEventBusinessRuleDomainService } from "./Domain/Services/Core/IGitEventBusinessRuleDomainService";
 
 let gitEventApplicationService = IoCContainer.resolve(IGitEventApplicationService);
@@ -28,6 +29,10 @@ console.log("Default branch name: " + gitDefaultBranchName);
 let gitPushBranchNameApplicationService = IoCContainer.resolve(IGitPushBranchNameApplicationService);
 var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName();
 console.log("Push branch name: " + gitPushBranchName);
+
+let gitBranchBusinessRuleDomainService = IoCContainer.resolve(IGitBranchBusinessRuleDomainService);
+var isAllowedGitBranch = gitBranchBusinessRuleDomainService.isAllowedGitBranch(gitPushBranchName, gitDefaultBranchName);
+console.log("Is allowed git granch: " + isAllowedGitBranch.toString());
 
 let gitAuthenticationApplicationService = IoCContainer.resolve(IGitAuthenticationApplicationService);
 var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();

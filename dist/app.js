@@ -8,6 +8,7 @@ const IGitPushBranchNameApplicationService_1 = require("./Application/Core/IGitP
 const IGitRepositoryApplicationService_1 = require("./Application/Core/IGitRepositoryApplicationService");
 const Container_1 = require("./Crosscutting/Container");
 const GitEventTypeEnum_1 = require("./Domain/Enums/GitEventTypeEnum");
+const IGitBranchBusinessRuleDomainService_1 = require("./Domain/Services/Core/IGitBranchBusinessRuleDomainService");
 const IGitEventBusinessRuleDomainService_1 = require("./Domain/Services/Core/IGitEventBusinessRuleDomainService");
 let gitEventApplicationService = Container_1.IoCContainer.resolve(IGitEventApplicationService_1.IGitEventApplicationService);
 var gitEventType = gitEventApplicationService.getGitEventType();
@@ -26,6 +27,9 @@ console.log("Default branch name: " + gitDefaultBranchName);
 let gitPushBranchNameApplicationService = Container_1.IoCContainer.resolve(IGitPushBranchNameApplicationService_1.IGitPushBranchNameApplicationService);
 var gitPushBranchName = gitPushBranchNameApplicationService.getGitPushBranchName();
 console.log("Push branch name: " + gitPushBranchName);
+let gitBranchBusinessRuleDomainService = Container_1.IoCContainer.resolve(IGitBranchBusinessRuleDomainService_1.IGitBranchBusinessRuleDomainService);
+var isAllowedGitBranch = gitBranchBusinessRuleDomainService.isAllowedGitBranch(gitPushBranchName, gitDefaultBranchName);
+console.log("Is allowed git granch: " + isAllowedGitBranch.toString());
 let gitAuthenticationApplicationService = Container_1.IoCContainer.resolve(IGitAuthenticationApplicationService_1.IGitAuthenticationApplicationService);
 var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
 console.log("Git Authentication: " + gitAuthentication.token);
