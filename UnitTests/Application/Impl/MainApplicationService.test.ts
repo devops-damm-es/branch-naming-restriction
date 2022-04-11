@@ -1,16 +1,16 @@
-import { IActionResultApplicationService } from "../../../../src/Application/Core/IActionResultApplicationService";
-import { IGitAuthenticationApplicationService } from "../../../../src/Application/Core/IGitAuthenticationApplicationService";
-import { IGitBranchApplicationService } from "../../../../src/Application/Core/IGitBranchApplicationService";
-import { IGitDefaultBranchNameApplicationService } from "../../../../src/Application/Core/IGitDefaultBranchNameApplicationService";
-import { IGitEventApplicationService } from "../../../../src/Application/Core/IGitEventApplicationService";
-import { IGitPushBranchNameApplicationService } from "../../../../src/Application/Core/IGitPushBranchNameApplicationService";
-import { IGitRepositoryApplicationService } from "../../../../src/Application/Core/IGitRepositoryApplicationService";
-import { MainApplicationService } from "../../../../src/Application/Core/Impl/MainApplicationService";
-import { GitAuthentication } from "../../../../src/Domain/Entities/GitAuthentication";
-import { GitRepository } from "../../../../src/Domain/Entities/GitRepository";
-import { GitEventTypeEnum } from "../../../../src/Domain/Enums/GitEventTypeEnum";
-import { IGitBranchBusinessRuleDomainService } from "../../../../src/Domain/Services/Core/IGitBranchBusinessRuleDomainService";
-import { IGitEventBusinessRuleDomainService } from "../../../../src/Domain/Services/Core/IGitEventBusinessRuleDomainService";
+import { IActionResultApplicationService } from "../../../src/Application/Core/IActionResultApplicationService";
+import { IGitAuthenticationApplicationService } from "../../../src/Application/Core/IGitAuthenticationApplicationService";
+import { IGitBranchApplicationService } from "../../../src/Application/Core/IGitBranchApplicationService";
+import { IGitDefaultBranchNameApplicationService } from "../../../src/Application/Core/IGitDefaultBranchNameApplicationService";
+import { IGitEventApplicationService } from "../../../src/Application/Core/IGitEventApplicationService";
+import { IGitPushBranchNameApplicationService } from "../../../src/Application/Core/IGitPushBranchNameApplicationService";
+import { IGitRepositoryApplicationService } from "../../../src/Application/Core/IGitRepositoryApplicationService";
+import { MainApplicationService } from "../../../src/Application/Impl/MainApplicationService";
+import { GitAuthentication } from "../../../src/Domain/Entities/GitAuthentication";
+import { GitRepository } from "../../../src/Domain/Entities/GitRepository";
+import { GitEventTypeEnum } from "../../../src/Domain/Enums/GitEventTypeEnum";
+import { IGitBranchBusinessRuleDomainService } from "../../../src/Domain/Services/Core/IGitBranchBusinessRuleDomainService";
+import { IGitEventBusinessRuleDomainService } from "../../../src/Domain/Services/Core/IGitEventBusinessRuleDomainService";
 
 beforeEach(() => {
   jest.clearAllMocks();

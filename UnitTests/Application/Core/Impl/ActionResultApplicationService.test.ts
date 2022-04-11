@@ -2,7 +2,11 @@ import { IActionResultRepositoryService } from "../../../../src/Infrastructure/C
 import { IActionResultDomainService } from "../../../../src/Domain/Services/Core/IActionResultDomainService";
 import { ActionResultApplicationService } from "../../../../src/Application/Core/Impl/ActionResultApplicationService";
 
-it("setActionResult_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("setActionResult_Ok", () => {
   // Arrange
   let sut = new ActionResultApplicationService(mockActionResultDomainService);
 

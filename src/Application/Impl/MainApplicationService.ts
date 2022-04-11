@@ -1,13 +1,13 @@
 import { Inject } from "typescript-ioc";
-import { IGitBranchBusinessRuleDomainService } from "../../../Domain/Services/Core/IGitBranchBusinessRuleDomainService";
-import { IGitEventBusinessRuleDomainService } from "../../../Domain/Services/Core/IGitEventBusinessRuleDomainService";
-import { IActionResultApplicationService } from "../IActionResultApplicationService";
-import { IGitAuthenticationApplicationService } from "../IGitAuthenticationApplicationService";
-import { IGitBranchApplicationService } from "../IGitBranchApplicationService";
-import { IGitDefaultBranchNameApplicationService } from "../IGitDefaultBranchNameApplicationService";
-import { IGitEventApplicationService } from "../IGitEventApplicationService";
-import { IGitPushBranchNameApplicationService } from "../IGitPushBranchNameApplicationService";
-import { IGitRepositoryApplicationService } from "../IGitRepositoryApplicationService";
+import { IGitBranchBusinessRuleDomainService } from "../../Domain/Services/Core/IGitBranchBusinessRuleDomainService";
+import { IGitEventBusinessRuleDomainService } from "../../Domain/Services/Core/IGitEventBusinessRuleDomainService";
+import { IActionResultApplicationService } from "../Core/IActionResultApplicationService";
+import { IGitAuthenticationApplicationService } from "../Core/IGitAuthenticationApplicationService";
+import { IGitBranchApplicationService } from "../Core/IGitBranchApplicationService";
+import { IGitDefaultBranchNameApplicationService } from "../Core/IGitDefaultBranchNameApplicationService";
+import { IGitEventApplicationService } from "../Core/IGitEventApplicationService";
+import { IGitPushBranchNameApplicationService } from "../Core/IGitPushBranchNameApplicationService";
+import { IGitRepositoryApplicationService } from "../Core/IGitRepositoryApplicationService";
 import { IMainApplicationService } from "../IMainApplicationService";
 
 export class MainApplicationService implements IMainApplicationService {

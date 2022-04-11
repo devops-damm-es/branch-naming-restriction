@@ -6,7 +6,7 @@ import { IGitDefaultBranchNameApplicationService } from "../Application/Core/IGi
 import { IGitEventApplicationService } from "../Application/Core/IGitEventApplicationService";
 import { IGitPushBranchNameApplicationService } from "../Application/Core/IGitPushBranchNameApplicationService";
 import { IGitRepositoryApplicationService } from "../Application/Core/IGitRepositoryApplicationService";
-import { IMainApplicationService } from "../Application/Core/IMainApplicationService";
+import { IMainApplicationService } from "../Application/IMainApplicationService";
 import { ActionResultApplicationService } from "../Application/Core/Impl/ActionResultApplicationService";
 import { GitAuthenticationApplicationService } from "../Application/Core/Impl/GitAuthenticationApplicationService";
 import { GitBranchApplicationService } from "../Application/Core/Impl/GitBranchApplicationService";
@@ -14,7 +14,7 @@ import { GitDefaultBranchNameApplicationService } from "../Application/Core/Impl
 import { GitEventApplicationService } from "../Application/Core/Impl/GitEventApplicationService";
 import { GitPushBranchNameApplicationService } from "../Application/Core/Impl/GitPushBranchNameApplicationService";
 import { GitRepositoryApplicationService } from "../Application/Core/Impl/GitRepositoryApplicationService";
-import { MainApplicationService } from "../Application/Core/Impl/MainApplicationService";
+import { MainApplicationService } from "../Application/Impl/MainApplicationService";
 import { IActionResultDomainService } from "../Domain/Services/Core/IActionResultDomainService";
 import { IGitAuthenticationDomainService } from "../Domain/Services/Core/IGitAuthenticationDomainService";
 import { IGitBranchBusinessRuleDomainService } from "../Domain/Services/Core/IGitBranchBusinessRuleDomainService";

@@ -1,4 +1,4 @@
-import { IMainApplicationService } from "./Application/Core/IMainApplicationService";
+import { IMainApplicationService } from "./Application/IMainApplicationService";
 import { IoCContainer } from "./Crosscutting/Container";
 
 var mainApplicationService = IoCContainer.resolve(IMainApplicationService);
