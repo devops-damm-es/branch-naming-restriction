@@ -2,7 +2,11 @@ import { GitRepository } from "../../../../src/Domain/Entities/GitRepository";
 import { GitRepositoryRepositoryService } from "../../../../src/Infrastructure/Core/Impl/GitRepositoryRepositoryService";
 import { IGitRepositoryWrapperRepositoryService } from "../../../../src/Infrastructure/Core/Wrapper/IGitRepositoryWrapperRepositoryService";
 
-it("getGitRepository_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitRepository_Ok", () => {
   // Arrange
   let sut = new GitRepositoryRepositoryService(mockGitRepositoryWrapperRepositoryService);
 
@@ -15,7 +19,7 @@ it("getGitRepository_Ok", () => {
   expect(result.name).toBe("name");
 });
 
-it("getGitRepository_ReturnsNull_Ok", () => {
+test("getGitRepository_ReturnsNull_Ok", () => {
   // Arrange
   let sut = new GitRepositoryRepositoryService(mockGitRepositoryWrapperNullRepositoryService);
 

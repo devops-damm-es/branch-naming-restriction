@@ -2,7 +2,11 @@ import { IGitPushBranchNameRepositoryService } from "../../../../src/Infrastruct
 import { IGitPushBranchNameDomainService } from "../../../../src/Domain/Services/Core/IGitPushBranchNameDomainService";
 import { GitPushBranchNameApplicationService } from "../../../../src/Application/Core/Impl/GitPushBranchNameApplicationService";
 
-it("getGitPushBranchName_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitPushBranchName_Ok", () => {
   // Arrange
   let sut = new GitPushBranchNameApplicationService(mockGitPushBranchNameDomainService);
 

@@ -10,7 +10,7 @@ export class ActionResultRepositoryService implements IActionResultRepositorySer
         this.actionResultWrapperRepositoryService = actionResultWrapperRepositoryService;
     }
 
-    setActionResult(success: Boolean) {
-        this.actionResultWrapperRepositoryService.setActionResult(success);
+    setActionResult(success: Boolean, message: String) {
+        this.actionResultWrapperRepositoryService.setActionResult(success, message);
     }
 }

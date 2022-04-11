@@ -19,8 +19,8 @@ let ActionResultApplicationService = class ActionResultApplicationService {
     constructor(actionResultDomainService) {
         this.actionResultDomainService = actionResultDomainService;
     }
-    setActionResult(success) {
-        this.actionResultDomainService.getRepositoryService().setActionResult(success);
+    setActionResult(success, message) {
+        this.actionResultDomainService.getRepositoryService().setActionResult(success, message);
     }
 };
 ActionResultApplicationService = __decorate([

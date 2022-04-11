@@ -1,7 +1,11 @@
 import { GitDefaultBranchNameRepositoryService } from "../../../../src/Infrastructure/Core/Impl/GitDefaultBranchNameRepositoryService";
 import { IGitDefaultBranchNameWrapperRepositoryService } from "../../../../src/Infrastructure/Core/Wrapper/IGitDefaultBranchNameWrapperRepositoryService";
 
-it("getGitDefaultBranchName_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitDefaultBranchName_Ok", () => {
   // Arrange
   let sut = new GitDefaultBranchNameRepositoryService(mockGitDefaultBranchNameWrapperRepositoryService);
 
@@ -13,7 +17,7 @@ it("getGitDefaultBranchName_Ok", () => {
   expect(result).toBe("main");
 });
 
-it("getGitDefaultBranchName_ReturnsNull_Ok", () => {
+test("getGitDefaultBranchName_ReturnsNull_Ok", () => {
   // Arrange
   let sut = new GitDefaultBranchNameRepositoryService(mockGitDefaultBranchNameWrapperNullRepositoryService);
 

@@ -3,7 +3,11 @@ import { IGitRepositoryDomainService } from "../../../../src/Domain/Services/Cor
 import { GitRepositoryApplicationService } from "../../../../src/Application/Core/Impl/GitRepositoryApplicationService";
 import { GitRepository } from "../../../../src/Domain/Entities/GitRepository";
 
-it("getGitRepository_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitRepository_Ok", () => {
   // Arrange
   let sut = new GitRepositoryApplicationService(mockGitRepositoryDomainService);
 

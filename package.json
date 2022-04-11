@@ -15,7 +15,8 @@
     "typescript-ioc": "^3.2.2"
   },
   "devDependencies": {
-    "@types/jest": "^27.4.1"
+    "@types/jest": "^27.4.1",
+    "jest-mock-extended": "^2.0.5"
   },
   "scripts": {
     "test": "jest"

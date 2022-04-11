@@ -7,7 +7,7 @@ it("setActionResult_Ok", () => {
   let sut = new ActionResultApplicationService(mockActionResultDomainService);
 
   // Act
-  var result = sut.setActionResult(true);
+  var result = sut.setActionResult(true, "message");
 
   // Assert
   expect(mockActionResultDomainService.getRepositoryService).toBeCalledTimes(1);

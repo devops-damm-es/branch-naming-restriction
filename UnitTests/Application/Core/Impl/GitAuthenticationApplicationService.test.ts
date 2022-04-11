@@ -3,7 +3,11 @@ import { IGitAuthenticationDomainService } from "../../../../src/Domain/Services
 import { GitAuthenticationApplicationService } from "../../../../src/Application/Core/Impl/GitAuthenticationApplicationService";
 import { GitAuthentication } from "../../../../src/Domain/Entities/GitAuthentication";
 
-it("getGitAuthentication_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitAuthentication_Ok", () => {
   // Arrange
   let sut = new GitAuthenticationApplicationService(mockGitAuthenticationDomainService);
 

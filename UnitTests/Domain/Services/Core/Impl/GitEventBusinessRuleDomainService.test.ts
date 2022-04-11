@@ -1,7 +1,11 @@
 import { GitEventTypeEnum } from "../../../../../src/Domain/Enums/GitEventTypeEnum";
 import { GitEventBusinessRuleDomainService } from "../../../../../src/Domain/Services/Core/Impl/GitEventBusinessRuleDomainService";
 
-it("isAllowedGitEventType_ReturnsTrue_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("isAllowedGitEventType_ReturnsTrue_Ok", () => {
   // Arrange
   let sut = new GitEventBusinessRuleDomainService();
 
@@ -12,7 +16,7 @@ it("isAllowedGitEventType_ReturnsTrue_Ok", () => {
   expect(result).toBe(true);
 });
 
-it("isAllowedGitEventType_ReturnsFalse_Ok", () => {
+test("isAllowedGitEventType_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitEventBusinessRuleDomainService();
 

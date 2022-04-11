@@ -4,7 +4,11 @@ import { GitBranchApplicationService } from "../../../../src/Application/Core/Im
 import { GitAuthentication } from "../../../../src/Domain/Entities/GitAuthentication";
 import { GitRepository } from "../../../../src/Domain/Entities/GitRepository";
 
-it("deleteGitBranch_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("deleteGitBranch_Ok", () => {
   // Arrange
   let sut = new GitBranchApplicationService(mockGitBranchDomainService);
 

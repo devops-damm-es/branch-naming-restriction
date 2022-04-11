@@ -2,7 +2,11 @@ import { GitAuthentication } from "../../../../src/Domain/Entities/GitAuthentica
 import { GitAuthenticationRepositoryService } from "../../../../src/Infrastructure/Core/Impl/GitAuthenticationRepositoryService";
 import { IGitAuthenticationWrapperRepositoryService } from "../../../../src/Infrastructure/Core/Wrapper/IGitAuthenticationWrapperRepositoryService";
 
-it("getGitAuthentication_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitAuthentication_Ok", () => {
   // Arrange
   let sut = new GitAuthenticationRepositoryService(mockGitAuthenticationWrapperRepositoryService);
 
@@ -14,7 +18,7 @@ it("getGitAuthentication_Ok", () => {
   expect(result.token).toBe("token");
 });
 
-it("getGitAuthentication_ReturnsNull_Ok", () => {
+test("getGitAuthentication_ReturnsNull_Ok", () => {
   // Arrange
   let sut = new GitAuthenticationRepositoryService(mockGitAuthenticationWrapperNullRepositoryService);
 

@@ -1,12 +1,16 @@
 import { ActionResultRepositoryService } from "../../../../src/Infrastructure/Core/Impl/ActionResultRepositoryService";
 import { IActionResultWrapperRepositoryService } from "../../../../src/Infrastructure/Core/Wrapper/IActionResultWrapperRepositoryService";
 
-it("setActionResult_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("setActionResult_Ok", () => {
   // Arrange
   let sut = new ActionResultRepositoryService(mockActionResultWrapperRepositoryService);
 
   // Act
-  var result = sut.setActionResult(true);
+  var result = sut.setActionResult(true, "message");
 
   // Assert
   expect(mockActionResultWrapperRepositoryService.setActionResult).toBeCalledTimes(1);

@@ -3,7 +3,11 @@ import { IGitEventRepositoryService } from "../../../../src/Infrastructure/Core/
 import { IGitEventDomainService } from "../../../../src/Domain/Services/Core/IGitEventDomainService";
 import { GitEventApplicationService } from "../../../../src/Application/Core/Impl/GitEventApplicationService";
 
-it("getGitEventType_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitEventType_Ok", () => {
   // Arrange
   let sut = new GitEventApplicationService(mockGitEventDomainService);
 

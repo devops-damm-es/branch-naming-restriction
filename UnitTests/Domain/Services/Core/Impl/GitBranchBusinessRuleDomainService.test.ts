@@ -1,6 +1,10 @@
 import { GitBranchBusinessRuleDomainService } from "../../../../../src/Domain/Services/Core/Impl/GitBranchBusinessRuleDomainService";
 
-it("isAllowedGitBranch_AllowedBranchMaster_ReturnsTrue_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("isAllowedGitBranch_AllowedBranchMaster_ReturnsTrue_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -11,7 +15,7 @@ it("isAllowedGitBranch_AllowedBranchMaster_ReturnsTrue_Ok", () => {
   expect(result).toBe(true);
 });
 
-it("isAllowedGitBranch_AllowedBranchMain_ReturnsTrue_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchMain_ReturnsTrue_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -22,7 +26,7 @@ it("isAllowedGitBranch_AllowedBranchMain_ReturnsTrue_Ok", () => {
   expect(result).toBe(true);
 });
 
-it("isAllowedGitBranch_AllowedBranchDevelop_ReturnsTrue_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchDevelop_ReturnsTrue_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -33,7 +37,7 @@ it("isAllowedGitBranch_AllowedBranchDevelop_ReturnsTrue_Ok", () => {
   expect(result).toBe(true);
 });
 
-it("isAllowedGitBranch_AllowedBranchFeature_ReturnsTrue_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchFeature_ReturnsTrue_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -44,7 +48,7 @@ it("isAllowedGitBranch_AllowedBranchFeature_ReturnsTrue_Ok", () => {
   expect(result).toBe(true);
 });
 
-it("isAllowedGitBranch_AllowedBranchRelease_ReturnsTrue_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchRelease_ReturnsTrue_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -55,7 +59,7 @@ it("isAllowedGitBranch_AllowedBranchRelease_ReturnsTrue_Ok", () => {
   expect(result).toBe(true);
 });
 
-it("isAllowedGitBranch_AllowedBranchHotfix_ReturnsTrue_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchHotfix_ReturnsTrue_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -66,7 +70,7 @@ it("isAllowedGitBranch_AllowedBranchHotfix_ReturnsTrue_Ok", () => {
   expect(result).toBe(true);
 });
 
-it("isAllowedGitBranch_AllowedBranchMasterUppercase_ReturnsFalse_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchMasterUppercase_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -77,7 +81,7 @@ it("isAllowedGitBranch_AllowedBranchMasterUppercase_ReturnsFalse_Ok", () => {
   expect(result).toBe(false);
 });
 
-it("isAllowedGitBranch_AllowedBranchMainUppercase_ReturnsFalse_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchMainUppercase_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -88,7 +92,7 @@ it("isAllowedGitBranch_AllowedBranchMainUppercase_ReturnsFalse_Ok", () => {
   expect(result).toBe(false);
 });
 
-it("isAllowedGitBranch_AllowedBranchDevelopUppercase_ReturnsFalse_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchDevelopUppercase_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -99,7 +103,7 @@ it("isAllowedGitBranch_AllowedBranchDevelopUppercase_ReturnsFalse_Ok", () => {
   expect(result).toBe(false);
 });
 
-it("isAllowedGitBranch_AllowedBranchFeatureUppercase_ReturnsFalse_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchFeatureUppercase_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -110,7 +114,7 @@ it("isAllowedGitBranch_AllowedBranchFeatureUppercase_ReturnsFalse_Ok", () => {
   expect(result).toBe(false);
 });
 
-it("isAllowedGitBranch_AllowedBranchReleaseUppercase_ReturnsFalse_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchReleaseUppercase_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -121,7 +125,7 @@ it("isAllowedGitBranch_AllowedBranchReleaseUppercase_ReturnsFalse_Ok", () => {
   expect(result).toBe(false);
 });
 
-it("isAllowedGitBranch_AllowedBranchHotfixUppercase_ReturnsFalse_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchHotfixUppercase_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 
@@ -132,7 +136,7 @@ it("isAllowedGitBranch_AllowedBranchHotfixUppercase_ReturnsFalse_Ok", () => {
   expect(result).toBe(false);
 });
 
-it("isAllowedGitBranch_AllowedBranchRandomName_ReturnsFalse_Ok", () => {
+test("isAllowedGitBranch_AllowedBranchRandomName_ReturnsFalse_Ok", () => {
   // Arrange
   let sut = new GitBranchBusinessRuleDomainService();
 

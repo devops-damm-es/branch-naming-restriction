@@ -19,8 +19,8 @@ let ActionResultRepositoryService = class ActionResultRepositoryService {
     constructor(actionResultWrapperRepositoryService) {
         this.actionResultWrapperRepositoryService = actionResultWrapperRepositoryService;
     }
-    setActionResult(success) {
-        this.actionResultWrapperRepositoryService.setActionResult(success);
+    setActionResult(success, message) {
+        this.actionResultWrapperRepositoryService.setActionResult(success, message);
     }
 };
 ActionResultRepositoryService = __decorate([

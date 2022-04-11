@@ -2,7 +2,11 @@ import { GitEventTypeEnum } from "../../../../src/Domain/Enums/GitEventTypeEnum"
 import { GitEventRepositoryService } from "../../../../src/Infrastructure/Core/Impl/GitEventRepositoryService";
 import { IGitEventWrapperRepositoryService } from "../../../../src/Infrastructure/Core/Wrapper/IGitEventWrapperRepositoryService";
 
-it("getGitEventType_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitEventType_Ok", () => {
   // Arrange
   let sut = new GitEventRepositoryService(mockGitEventWrapperRepositoryService);
 
@@ -14,7 +18,7 @@ it("getGitEventType_Ok", () => {
   expect(result).toBe(GitEventTypeEnum.PullRequest);
 });
 
-it("getGitEventType_ReturnsNull_Ok", () => {
+test("getGitEventType_ReturnsNull_Ok", () => {
   // Arrange
   let sut = new GitEventRepositoryService(mockGitEventWrapperNullRepositoryService);
 

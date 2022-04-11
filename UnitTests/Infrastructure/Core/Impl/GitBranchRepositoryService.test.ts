@@ -3,7 +3,11 @@ import { GitRepository } from "../../../../src/Domain/Entities/GitRepository";
 import { GitBranchRepositoryService } from "../../../../src/Infrastructure/Core/Impl/GitBranchRepositoryService";
 import { IGitBranchWrapperRepositoryService } from "../../../../src/Infrastructure/Core/Wrapper/IGitBranchWrapperRepositoryService";
 
-it("deleteGitBranch_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("deleteGitBranch_Ok", () => {
   // Arrange
   let sut = new GitBranchRepositoryService(mockGitBranchWrapperRepositoryService);
 

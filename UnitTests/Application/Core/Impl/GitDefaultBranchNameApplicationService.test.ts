@@ -2,7 +2,11 @@ import { IGitDefaultBranchNameRepositoryService } from "../../../../src/Infrastr
 import { IGitDefaultBranchNameDomainService } from "../../../../src/Domain/Services/Core/IGitDefaultBranchNameDomainService";
 import { GitDefaultBranchNameApplicationService } from "../../../../src/Application/Core/Impl/GitDefaultBranchNameApplicationService";
 
-it("getGitDefaultBranchName_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitDefaultBranchName_Ok", () => {
   // Arrange
   let sut = new GitDefaultBranchNameApplicationService(mockGitDefaultBranchNameDomainService);
 

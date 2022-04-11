@@ -1,7 +1,11 @@
 import { GitPushBranchNameRepositoryService } from "../../../../src/Infrastructure/Core/Impl/GitPushBranchNameRepositoryService";
 import { IGitPushBranchNameWrapperRepositoryService } from "../../../../src/Infrastructure/Core/Wrapper/IGitPushBranchNameWrapperRepositoryService";
 
-it("getGitPushBranchName_Ok", () => {
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
+test("getGitPushBranchName_Ok", () => {
   // Arrange
   let sut = new GitPushBranchNameRepositoryService(mockGitPushBranchNameWrapperRepositoryService);
 
@@ -13,7 +17,7 @@ it("getGitPushBranchName_Ok", () => {
   expect(result).toBe("branch");
 });
 
-it("getGitPushBranchName_ReturnsNull_Ok", () => {
+test("getGitPushBranchName_ReturnsNull_Ok", () => {
   // Arrange
   let sut = new GitPushBranchNameRepositoryService(mockGitPushBranchNameWrapperNullRepositoryService);
 

@@ -10,7 +10,7 @@ export class ActionResultApplicationService implements IActionResultApplicationS
         this.actionResultDomainService = actionResultDomainService;
     }
 
-    setActionResult(success: Boolean) {
-        this.actionResultDomainService.getRepositoryService().setActionResult(success);
+    setActionResult(success: Boolean, message: String) {
+        this.actionResultDomainService.getRepositoryService().setActionResult(success, message);
     }
 }
