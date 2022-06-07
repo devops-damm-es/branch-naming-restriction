@@ -146,3 +146,36 @@ test("isAllowedGitBranch_AllowedBranchRandomName_ReturnsFalse_Ok", () => {
   // Assert
   expect(result).toBe(false);
 });
+
+test("isGitBranchNeedsToBeRenamed_ReturnsTrue_Ok", () => {
+  // Arrange
+  let sut = new GitBranchBusinessRuleDomainService();
+
+  // Act
+  var result = sut.isGitBranchNeedsToBeRenamed("develop_todelete");
+
+  // Assert
+  expect(result).toBe(true);
+});
+
+test("isGitBranchNeedsToBeRenamed_ReturnsFalse_Ok", () => {
+  // Arrange
+  let sut = new GitBranchBusinessRuleDomainService();
+
+  // Act
+  var result = sut.isGitBranchNeedsToBeRenamed("develop");
+
+  // Assert
+  expect(result).toBe(false);
+});
+
+test("getRandomBranchNameToDelete_Ok", () => {
+  // Arrange
+  let sut = new GitBranchBusinessRuleDomainService();
+
+  // Act
+  var result = sut.getRandomBranchNameToDelete();
+
+  // Assert
+  expect(result.length > 0).toBe(true);
+});

@@ -132,7 +132,18 @@ class FakeGitAuthenticationWrapperRepositoryService implements IGitAuthenticatio
 }
 
 class FakeGitBranchWrapperRepositoryService implements IGitBranchWrapperRepositoryService {
-  deleteGitBranch(branchName: String, gitRepository: GitRepository, gitAuthentication: GitAuthentication): Promise<Boolean> {
+  deleteGitBranch(
+    branchName: String,
+    gitRepository: GitRepository,
+    gitAuthentication: GitAuthentication): Promise<Boolean> {
+    return new Promise<Boolean>(function (resolve, reject) { });
+  }
+
+  renameGitBranch(
+    branchName: String,
+    newBranchName: String,
+    gitRepository: GitRepository,
+    gitAuthentication: GitAuthentication): Promise<Boolean> {
     return new Promise<Boolean>(function (resolve, reject) { });
   }
 }

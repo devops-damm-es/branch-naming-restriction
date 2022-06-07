@@ -12,7 +12,18 @@ export class GitBranchRepositoryService implements IGitBranchRepositoryService {
         this.gitBranchWrapperRepositoryService = gitBranchWrapperRepositoryService;
     }
 
-    async deleteGitBranch(branchName: String, gitRepository: GitRepository, gitAuthentication: GitAuthentication): Promise<Boolean> {
+    async deleteGitBranch(
+        branchName: String,
+        gitRepository: GitRepository,
+        gitAuthentication: GitAuthentication): Promise<Boolean> {
         return this.gitBranchWrapperRepositoryService.deleteGitBranch(branchName, gitRepository, gitAuthentication);
+    }
+
+    async renameGitBranch(
+        branchName: String,
+        newBranchName: String,
+        gitRepository: GitRepository,
+        gitAuthentication: GitAuthentication): Promise<Boolean> {
+        return this.gitBranchWrapperRepositoryService.renameGitBranch(branchName, newBranchName, gitRepository, gitAuthentication);
     }
 }

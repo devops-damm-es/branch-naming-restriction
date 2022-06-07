@@ -33,6 +33,11 @@ let GitBranchRepositoryService = class GitBranchRepositoryService {
             return this.gitBranchWrapperRepositoryService.deleteGitBranch(branchName, gitRepository, gitAuthentication);
         });
     }
+    renameGitBranch(branchName, newBranchName, gitRepository, gitAuthentication) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.gitBranchWrapperRepositoryService.renameGitBranch(branchName, newBranchName, gitRepository, gitAuthentication);
+        });
+    }
 };
 GitBranchRepositoryService = __decorate([
     __param(0, typescript_ioc_1.Inject),

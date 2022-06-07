@@ -167,12 +167,24 @@ const mockGitPushBranchNameApplicationService: jest.Mocked<IGitPushBranchNameApp
 const mockGitBranchBusinessRuleIsAllowedGitBranchTrueDomainService: jest.Mocked<IGitBranchBusinessRuleDomainService> = {
   isAllowedGitBranch: jest.fn().mockImplementation(() => {
     return true;
+  }),
+  isGitBranchNeedsToBeRenamed: jest.fn().mockImplementation(() => {
+    return true;
+  }),
+  getRandomBranchNameToDelete: jest.fn().mockImplementation(() => {
+    return "randomBranchName";
   })
 };
 
 const mockGitBranchBusinessRuleIsAllowedGitBranchFalseDomainService: jest.Mocked<IGitBranchBusinessRuleDomainService> = {
   isAllowedGitBranch: jest.fn().mockImplementation(() => {
     return false;
+  }),
+  isGitBranchNeedsToBeRenamed: jest.fn().mockImplementation(() => {
+    return true;
+  }),
+  getRandomBranchNameToDelete: jest.fn().mockImplementation(() => {
+    return "randomBranchName";
   })
 };
 
@@ -191,12 +203,18 @@ const mockGitRepositoryApplicationService: jest.Mocked<IGitRepositoryApplication
 const mockGitBranchDeleteGitBranchTrueApplicationService: jest.Mocked<IGitBranchApplicationService> = {
   deleteGitBranch: jest.fn().mockImplementation(() => {
     return new Promise<Boolean>(function (resolve, reject) { resolve(true); });
+  }),
+  renameGitBranch: jest.fn().mockImplementation(() => {
+    return new Promise<Boolean>(function (resolve, reject) { resolve(true); });
   })
 }
 
 const mockGitBranchDeleteGitBranchFalseApplicationService: jest.Mocked<IGitBranchApplicationService> = {
   deleteGitBranch: jest.fn().mockImplementation(() => {
     return new Promise<Boolean>(function (resolve, reject) { reject(false); });
+  }),
+  renameGitBranch: jest.fn().mockImplementation(() => {
+    return new Promise<Boolean>(function (resolve, reject) { resolve(true); });
   })
 }
 

@@ -12,7 +12,18 @@ export class GitBranchApplicationService implements IGitBranchApplicationService
         this.gitBranchDomainService = gitBranchDomainService;
     }
 
-    async deleteGitBranch(branchName: String, gitRepository: GitRepository, gitAuthentication: GitAuthentication): Promise<Boolean> {
+    async deleteGitBranch(
+        branchName: String,
+        gitRepository: GitRepository,
+        gitAuthentication: GitAuthentication): Promise<Boolean> {
         return this.gitBranchDomainService.getRepositoryService().deleteGitBranch(branchName, gitRepository, gitAuthentication);
+    }
+
+    async renameGitBranch(
+        branchName: String,
+        newBranchName: String,
+        gitRepository: GitRepository,
+        gitAuthentication: GitAuthentication): Promise<Boolean> {
+        return this.gitBranchDomainService.getRepositoryService().renameGitBranch(branchName, newBranchName, gitRepository, gitAuthentication);
     }
 }

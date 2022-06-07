@@ -23,13 +23,29 @@ class GitBranchWrapperRepositoryService {
                         ref: "heads/" + branchName
                     })
                         .then(_ => { resolve(true); })
-                        .catch(reason => {
-                        console.log("ERROR (fluent): " + reason);
-                        reject(false);
-                    });
+                        .catch(_ => { reject(false); });
                 }
-                catch (ex) {
-                    console.log("ERROR: " + ex);
+                catch (_a) {
+                    reject(false);
+                }
+            });
+        });
+    }
+    renameGitBranch(branchName, newBranchName, gitRepository, gitAuthentication) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise(function (resolve, reject) {
+                try {
+                    const client = github.getOctokit(gitAuthentication.token);
+                    client.repos.renameBranch({
+                        branch: branchName,
+                        new_name: newBranchName,
+                        owner: gitRepository.owner,
+                        repo: gitRepository.name,
+                    })
+                        .then(_ => { resolve(true); })
+                        .catch(_ => { reject(false); });
+                }
+                catch (_a) {
                     reject(false);
                 }
             });

@@ -23,8 +23,27 @@ test("deleteGitBranch_Ok", () => {
   expect(mockGitBranchRepositoryService.deleteGitBranch).toBeCalledTimes(1);
 });
 
+test("renameGitBranch_Ok", () => {
+  // Arrange
+  let sut = new GitBranchApplicationService(mockGitBranchDomainService);
+
+  // Act
+  var result = sut.renameGitBranch(
+    "branchName",
+    "newBranchName",
+    new GitRepository("owner", "name"),
+    new GitAuthentication("token"));
+
+  // Assert
+  expect(mockGitBranchDomainService.getRepositoryService).toBeCalledTimes(1);
+  expect(mockGitBranchRepositoryService.renameGitBranch).toBeCalledTimes(1);
+});
+
 const mockGitBranchRepositoryService: jest.Mocked<IGitBranchRepositoryService> = {
   deleteGitBranch: jest.fn().mockImplementation(() => {
+    return new Promise<Boolean>(function (resolve, reject) { });
+  }),
+  renameGitBranch: jest.fn().mockImplementation(() => {
     return new Promise<Boolean>(function (resolve, reject) { });
   })
 };
