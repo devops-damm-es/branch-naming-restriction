@@ -24,7 +24,15 @@ jobs:
     steps:
       - name: Verify Gitflow branch naming restriction
         uses: devops-damm-es/branch-naming-restriction@v1.0.0
+        with:
+          admin_pat_token: ${{ secrets.ADMIN_PAT_TOKEN }}
 ```
+# Input Variables
+
+## admin_pat_token
+
+Admin Personal Access Token
+
 # Output Variables
 
 ## branch-naming-allowed
