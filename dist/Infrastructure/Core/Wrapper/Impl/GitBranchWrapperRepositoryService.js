@@ -23,9 +23,13 @@ class GitBranchWrapperRepositoryService {
                         ref: "heads/" + branchName
                     })
                         .then(_ => { resolve(true); })
-                        .catch(_ => { reject(false); });
+                        .catch(reason => {
+                        console.log("ERROR (fluent): " + reason);
+                        reject(false);
+                    });
                 }
-                catch (_a) {
+                catch (ex) {
+                    console.log("ERROR: " + ex);
                     reject(false);
                 }
             });

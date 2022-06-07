@@ -13,9 +13,13 @@ export class GitBranchWrapperRepositoryService implements IGitBranchWrapperRepos
                     repo: gitRepository.name as string,
                     ref: "heads/" + branchName
                 })
-                .then(_ => { resolve(true); })
-                .catch(_ => { reject(false); })
-            } catch {
+                    .then(_ => { resolve(true); })
+                    .catch(reason => {
+                        console.log("ERROR (fluent): " + reason);
+                        reject(false);
+                    })
+            } catch (ex) {
+                console.log("ERROR: " + ex);
                 reject(false);
             }
         });
