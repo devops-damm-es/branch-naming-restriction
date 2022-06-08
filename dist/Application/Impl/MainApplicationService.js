@@ -56,18 +56,35 @@ let MainApplicationService = class MainApplicationService {
                 else {
                     var gitAuthentication = this.gitAuthenticationApplicationService.getGitAuthentication();
                     var gitRepository = this.gitRepositoryApplicationService.getGitRepository();
-                    try {
-                        yield this.gitBranchApplicationService.deleteGitBranch(gitPushBranchName, gitRepository, gitAuthentication);
-                        this.actionResultApplicationService.setActionResult(false, "Branch name is not allowed: Deleted from repository");
+                    if (this.gitBranchBusinessRuleDomainService.isGitBranchNeedsToBeRenamed(gitPushBranchName)) {
+                        var randomBranchNameToDelete = this.gitBranchBusinessRuleDomainService.getRandomBranchNameToDelete();
+                        this.gitBranchApplicationService.renameGitBranch(gitPushBranchName, randomBranchNameToDelete, gitRepository, gitAuthentication)
+                            .then(_ => {
+                            this._deleteGitBranch(randomBranchNameToDelete, gitRepository, gitAuthentication);
+                        })
+                            .catch(_ => {
+                            this.actionResultApplicationService.setActionResult(false, "Branch name is not allowed: Error when rename for delete branch from repository");
+                        });
                     }
-                    catch (_a) {
-                        this.actionResultApplicationService.setActionResult(false, "Branch name is not allowed: Error when deleting from repository");
+                    else {
+                        this._deleteGitBranch(gitPushBranchName, gitRepository, gitAuthentication);
                     }
                 }
             }
             else {
                 this.actionResultApplicationService.setActionResult(false, "Git event type is not allowed");
             }
+        });
+    }
+    _deleteGitBranch(branchName, gitRepository, gitAuthentication) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.gitBranchApplicationService.deleteGitBranch(branchName, gitRepository, gitAuthentication)
+                .then(_ => {
+                this.actionResultApplicationService.setActionResult(false, "Branch name is not allowed: Deleted from repository");
+            })
+                .catch(_ => {
+                this.actionResultApplicationService.setActionResult(false, "Branch name is not allowed: Error when deleting from repository");
+            });
         });
     }
 };

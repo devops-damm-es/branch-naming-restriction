@@ -107,6 +107,7 @@ test("start_ActionResultFalseBranchNameIsNotAllowedDeletedFromRepository_Ok", as
 
   // Act
   await sut.start();
+  await new Promise(process.nextTick);
 
   // Assert
   expect(FakeActionResultWrapperRepositoryService.Success).toBe(false);

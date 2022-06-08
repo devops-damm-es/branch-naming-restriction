@@ -62,7 +62,7 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-test("start_ActionResultTrue_Ok", async () => {
+test("start_ActionResultFalse_IsGitBranchNeedsToBeRenamedTrue_BranchNameIsNotAllowedDeletedFromRepository_Ok", async () => {
   // Arrange
 
   // Application
@@ -110,8 +110,8 @@ test("start_ActionResultTrue_Ok", async () => {
   await new Promise(process.nextTick);
 
   // Assert
-  expect(FakeActionResultWrapperRepositoryService.Success).toBe(true);
-  expect(FakeActionResultWrapperRepositoryService.Message).toBe("Branch name is allowed");
+  expect(FakeActionResultWrapperRepositoryService.Success).toBe(false);
+  expect(FakeActionResultWrapperRepositoryService.Message).toBe("Branch name is not allowed: Deleted from repository");
 });
 
 
@@ -137,7 +137,7 @@ class FakeGitBranchWrapperRepositoryService implements IGitBranchWrapperReposito
     branchName: String,
     gitRepository: GitRepository,
     gitAuthentication: GitAuthentication): Promise<Boolean> {
-    return new Promise<Boolean>(function (resolve, reject) { });
+    return new Promise<Boolean>(function (resolve, reject) { resolve(true); });
   }
 
   renameGitBranch(
@@ -145,7 +145,7 @@ class FakeGitBranchWrapperRepositoryService implements IGitBranchWrapperReposito
     newBranchName: String,
     gitRepository: GitRepository,
     gitAuthentication: GitAuthentication): Promise<Boolean> {
-    return new Promise<Boolean>(function (resolve, reject) { });
+    return new Promise<Boolean>(function (resolve, reject) { resolve(true); });
   }
 }
 
@@ -163,7 +163,7 @@ class FakeGitEventWrapperRepositoryService implements IGitEventWrapperRepository
 
 class FakeGitPushBranchNameWrapperRepositoryService implements IGitPushBranchNameWrapperRepositoryService {
   getGitPushBranchName(): String {
-    return "feature/XXX";
+    return "develop_ToDelete";
   }
 }
 
